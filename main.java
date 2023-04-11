@@ -24,6 +24,13 @@ class Account{
         sum = sum + deposit;
         System.out.println("You now have $" + sum + "in your account.");
     }
+
+    public static void withdrawAccount(){
+        System.out.println("How much do you want to withdraw from your account?");
+        float withdraw = in.nextFloat();
+        sum = sum - withdraw;
+        System.out.println("You now have $" + sum + "in your account.");
+    }
 }
 
 
@@ -61,10 +68,7 @@ class main{
                 account.depositAccount();
             }
             else if (choice == 3){
-                System.out.println("How much do you want to withdraw from your account?");
-                float withdraw = account.in.nextFloat();
-                account.sum = account.sum - withdraw;
-                System.out.println("You now have $" + account.sum + "in your account.");
+                account.withdrawAccount();
             }
             else{
                 System.out.println("This is not a recognized option");
