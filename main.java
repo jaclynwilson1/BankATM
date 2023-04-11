@@ -3,6 +3,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+class ATM{
+    public float sum;
+    public String name;
+
+    public ATM(String name, float sum){
+        this.name = name;
+        this.sum = sum;
+    }
+}
 
 
 class main{
