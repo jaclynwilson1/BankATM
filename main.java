@@ -3,11 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-class ATM{
+class Account{
     public float sum;
     public String name;
 
-    public ATM(String name, float sum){
+    public Account(String name, float sum){
         this.name = name;
         this.sum = sum;
     }
@@ -26,7 +26,7 @@ class main{
     public static void main(String[] args){
         System.out.println("Welcome to JCWBanking!");
 
-        float sum = 0;
+        Account account = new Account("Jaclyn", 0);
 
         Scanner in = new Scanner(System.in);
         boolean keep_going = true;
@@ -42,19 +42,19 @@ class main{
                 System.out.println("Goodbye!");
             }
             if (choice == 1){
-                System.out.println("$"+ sum);
+                System.out.println("$"+ account.sum);
             }
             else if (choice == 2){
                 System.out.println("How much do you want to deposit into your account?");
                 float deposit = in.nextFloat();
-                sum = sum + deposit;
-                System.out.println("You now have $" + sum + "in your account.");
+                account.sum = account.sum + deposit;
+                System.out.println("You now have $" + account.sum + "in your account.");
             }
             else if (choice == 3){
                 System.out.println("How much do you want to withdraw from your account?");
                 float withdraw = in.nextFloat();
-                sum = sum - withdraw;
-                System.out.println("You now have $" + sum + "in your account.");
+                account.sum = account.sum - withdraw;
+                System.out.println("You now have $" + account.sum + "in your account.");
             }
             else{
                 System.out.println("This is not a recognized option");
