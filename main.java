@@ -21,15 +21,27 @@ class Account{
     public static void depositAccount(){
         System.out.println("How much do you want to deposit into your account?");
         float deposit = in.nextFloat();
-        sum = sum + deposit;
+        sum = add(sum, deposit);
         System.out.println("You now have $" + sum + "in your account.");
     }
 
     public static void withdrawAccount(){
         System.out.println("How much do you want to withdraw from your account?");
         float withdraw = in.nextFloat();
-        sum = sum - withdraw;
+        sum = subtract(sum, withdraw);
         System.out.println("You now have $" + sum + "in your account.");
+    }
+
+    /**
+    * param x is a float
+    * param y is a float
+     */
+    public static float add(float x, float y){
+        return x+y;
+    }
+
+    public static float subtract(float x, float y){
+        return x-y;
     }
 }
 
