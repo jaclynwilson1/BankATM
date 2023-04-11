@@ -4,12 +4,16 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 class Account{
-    public float sum;
-    public String name;
+    public static float sum;
+    public static String name;
 
     public Account(String name, float sum){
         this.name = name;
         this.sum = sum;
+    }
+
+    public static void viewAccount(){
+        System.out.println("$"+ sum);
     }
 }
 
@@ -42,7 +46,7 @@ class main{
                 System.out.println("Goodbye!");
             }
             if (choice == 1){
-                System.out.println("$"+ account.sum);
+                account.viewAccount();
             }
             else if (choice == 2){
                 System.out.println("How much do you want to deposit into your account?");
