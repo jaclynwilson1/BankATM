@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
 
 class Account{
     public static float sum;
@@ -56,6 +58,36 @@ class main{
     }
 
     public static void main(String[] args){
+        /**JFrame f = new JFrame("Welcome to JCWBanking");
+        Account account = new Account("Jaclyn", 0, new Scanner(System.in));
+
+        JButton view = new JButton("View Account");
+        /**  {
+            public void actionPerformed(ActionEvent e){
+                JButton v = new JButton("Account balance $" + account.sum);
+                v.setBounds(130, 220, 100, 40);
+                f.add(v);
+            }
+        });*/
+
+        /**JButton deposit = new JButton("Deposit");
+        JButton withdraw = new JButton("Withdraw");
+        JButton exit = new JButton("Exit");
+
+        view.setBounds(130,60,100,40);
+        deposit.setBounds(130,100,100,40);
+        withdraw.setBounds(130,140,100,40);
+        exit.setBounds(130, 180, 100, 40);
+
+        f.add(view);
+        f.add(deposit);
+        f.add(withdraw);
+        f.add(exit);
+        
+        f.setSize(400,500);
+        f.setLayout(null);
+        f.setVisible(true);
+        /** */
         System.out.println("Welcome to JCWBanking!");
 
         Account account = new Account("Jaclyn", 0, new Scanner(System.in));
