@@ -3,7 +3,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+
+
 class main{
+    public static void menu(){
+        System.out.println("Choose one of the following options:");
+        System.out.println("0 to exit");
+        System.out.println("1 to view funds");
+        System.out.println("2 to deposit");
+        System.out.println("3 to withdraw");
+    }
+
     public static void main(String[] args){
         System.out.println("Welcome to JCWBanking!");
 
@@ -12,13 +22,9 @@ class main{
         Scanner in = new Scanner(System.in);
         boolean keep_going = true;
 
-        System.out.println("Choose one of the following options:");
-        System.out.println("0 to exit");
-        System.out.println("1 to view funds");
-        System.out.println("2 to deposit");
-        System.out.println("3 to withdraw");
-
         while (keep_going){
+            menu();
+            //need to do a catch to make sure it is an integer
             int choice = in.nextInt();
             System.out.println("You choose option " + choice);
 
@@ -40,6 +46,17 @@ class main{
                 float withdraw = in.nextFloat();
                 sum = sum - withdraw;
                 System.out.println("You now have $" + sum + "in your account.");
+            }
+            else{
+                System.out.println("This is not a recognized option");
+                continue;
+
+            }
+            System.out.println("Do you with to continue?[Y/N]");
+            String answer = in.next();
+            if (answer.equals("N")){
+                keep_going = false;
+                System.out.println("Goodbye!");
             }
         }
 
