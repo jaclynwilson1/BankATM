@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 class Account{
     public static float sum;
@@ -48,32 +49,21 @@ class Account{
 }
 
 
-class main{
-    public static void menu(){
-        System.out.println("Choose one of the following options:");
-        System.out.println("0 to exit");
-        System.out.println("1 to view funds");
-        System.out.println("2 to deposit");
-        System.out.println("3 to withdraw");
+class Menu implements ActionListener{
+    JFrame f = new JFrame("Welcome to JCWBanking");
+    Account account = new Account("Jaclyn", 0, new Scanner(System.in));
+
+    JButton view = new JButton("View Account");
+
+    JButton deposit = new JButton("Deposit");
+    JButton withdraw = new JButton("Withdraw");
+    JButton exit = new JButton("Exit");
+    
+    Menu(){
+        prepareMenu();
     }
 
-    public static void main(String[] args){
-        /**JFrame f = new JFrame("Welcome to JCWBanking");
-        Account account = new Account("Jaclyn", 0, new Scanner(System.in));
-
-        JButton view = new JButton("View Account");
-        /**  {
-            public void actionPerformed(ActionEvent e){
-                JButton v = new JButton("Account balance $" + account.sum);
-                v.setBounds(130, 220, 100, 40);
-                f.add(v);
-            }
-        });*/
-
-        /**JButton deposit = new JButton("Deposit");
-        JButton withdraw = new JButton("Withdraw");
-        JButton exit = new JButton("Exit");
-
+    public void prepareMenu(){
         view.setBounds(130,60,100,40);
         deposit.setBounds(130,100,100,40);
         withdraw.setBounds(130,140,100,40);
@@ -83,11 +73,40 @@ class main{
         f.add(deposit);
         f.add(withdraw);
         f.add(exit);
+
+        view.addActionListener(this);
+        //deposit.addActionListener(this);
+        //withdraw.addActionListener(this);
+        //exit.addActionListener(this);
         
         f.setSize(400,500);
         f.setLayout(null);
         f.setVisible(true);
-        /** */
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    @Override
+    public void ActionPerformed(ActionEvent e){
+        f.getContentPane().setBackground(Color.pink);
+
+    }
+
+}
+
+class main{
+ 
+    public static void menu(){
+        System.out.println("Choose one of the following options:");
+        System.out.println("0 to exit");
+        System.out.println("1 to view funds");
+        System.out.println("2 to deposit");
+        System.out.println("3 to withdraw");
+    }
+
+    public static void main(String[] args){
+        new Menu();
+        /** 
         System.out.println("Welcome to JCWBanking!");
 
         Account account = new Account("Jaclyn", 0, new Scanner(System.in));
@@ -125,7 +144,7 @@ class main{
                 keep_going = false;
                 System.out.println("Goodbye!");
             }
-        }
+        }*/
 
     }
 }
